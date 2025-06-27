@@ -3,15 +3,15 @@ import spacy
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 
-import spacy
+# Load the spaCy model
 nlp = spacy.load("en_core_web_sm")
 
-
-
+# Function to clean and preprocess text
 def clean(text):
     doc = nlp(text.lower())
     return " ".join([token.lemma_ for token in doc if token.is_alpha and not token.is_stop])
 
+# Streamlit UI
 st.title("📄 Resume Screening Tool")
 resume = st.text_area("Paste your Resume here 👤")
 jd = st.text_area("Paste Job Description here 💼")
