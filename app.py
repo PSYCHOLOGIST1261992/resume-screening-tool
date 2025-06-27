@@ -3,8 +3,9 @@ import spacy
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 
-import en_core_web_sm
-nlp = en_core_web_sm.load()
+import spacy
+nlp = spacy.load("en_core_web_sm")
+
 
 
 def clean(text):
